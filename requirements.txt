@@ -2,6 +2,7 @@
 uvicorn[standard]
 pydantic>=2.0.0
 pydantic-settings>=2.10.1
+pydantic[email]
 sqlalchemy>=2.0.43
 psycopg[binary]>=3.2.9
 alembic>=1.17.1
@@ -27,3 +28,4 @@ typing_extensions>=4.0.0
 anyio>=4.0.0
 starlette>=0.40.0
 click>=8.0.0
+email-validator>=2.0.0
