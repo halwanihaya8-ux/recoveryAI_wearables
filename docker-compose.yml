@@ -18,17 +18,19 @@ services:
 
   app:
     build:
-        context: ./backend
-        dockerfile: Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: backend__open-wearables
     image: open-wearables-platform:latest
     pull_policy: never
     command: scripts/start/app.sh
     env_file:
       - ./backend/config/.env
+    working_dir: /root_project
     environment:
       - DB_HOST=db
       - REDIS_HOST=redis
+      - PYTHONPATH=/root_project
     ports:
       - "8000:8000"
     depends_on:
@@ -64,9 +66,11 @@ services:
     command: scripts/start/worker.sh
     env_file:
       - ./backend/config/.env
+    working_dir: /root_project
     environment:
       - DB_HOST=db
       - REDIS_HOST=redis
+      - PYTHONPATH=/root_project
     depends_on:
       - redis
       - db
@@ -87,9 +91,11 @@ services:
     command: scripts/start/beat.sh
     env_file:
       - ./backend/config/.env
+    working_dir: /root_project
     environment:
       - DB_HOST=db
       - REDIS_HOST=redis
+      - PYTHONPATH=/root_project
     depends_on:
       - redis
       - db
@@ -110,9 +116,11 @@ services:
     command: scripts/start/flower.sh
     env_file:
       - ./backend/config/.env
+    working_dir: /root_project
     environment:
       - DB_HOST=db
       - REDIS_HOST=redis
+      - PYTHONPATH=/root_project
     ports:
       - 5555:5555
     depends_on:

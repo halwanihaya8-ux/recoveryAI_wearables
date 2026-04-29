@@ -17,8 +17,9 @@ from app.middlewares import add_cors_middleware
 from app.services import raw_payload_storage
 from app.services.outgoing_webhooks import svix as svix_service
 from app.utils.exceptions import DatetimeParseError, handle_exception
+from app.api.fast_api_predict import router as predict_router
 
-# Configure logging to use stdout instead of stderr
+
 # Some platforms convert stderr logs to level.error automatically, so we must use stdout
 # This ensures platforms correctly identify log levels from JSON structured logs
 basicConfig(
@@ -75,4 +76,5 @@ async def datetime_parse_exception_handler(_: Request, exc: DatetimeParseError) 
     raise handle_exception(exc, "")
 
 
+api.include_router(predict_router, prefix="/predict")
 api.include_router(head_router)

@@ -1,8 +1,6 @@
 {
-  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
   "python.analysis.extraPaths": [
-    "${workspaceFolder}/backend"
+    "./app"
   ],
-  "makefile.configureOnOpen": false
+  "python.defaultInterpreterPath": "./venv/bin/python"
 }
-
