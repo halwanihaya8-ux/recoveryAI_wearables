@@ -1064,7 +1064,7 @@ requires-dist = [
     { name = "resend", specifier = ">=2.0.0" },
     { name = "scikit-learn" },
     { name = "scikit-learn", specifier = ">=1.6.0" },
-    { name = "sentry-sdk", extras = ["fastapi"], specifier = ">=2.57.0" },
+    { name = "sentry-sdk", extras = ["fastapi"], specifier = ">=2.58.0" },
     { name = "sqlalchemy", specifier = ">=2.0.43" },
     { name = "svix", specifier = ">=1.90.0" },
     { name = "xgboost" },
