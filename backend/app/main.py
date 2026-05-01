@@ -53,7 +53,6 @@ async def _lifespan(_: FastAPI) -> AsyncGenerator[None, None]:
     svix_service.register_event_types()
     yield
 
-
 api = FastAPI(title=settings.api_name, lifespan=_lifespan)
 celery_app = create_celery()
 init_sentry()
@@ -88,5 +87,4 @@ async def datetime_parse_exception_handler(_: Request, exc: DatetimeParseError) 
     raise handle_exception(exc, "")
 
 
-api.include_router(predict_router, prefix="/predict")
 api.include_router(head_router)
