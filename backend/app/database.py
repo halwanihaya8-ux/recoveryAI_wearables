@@ -34,9 +34,12 @@ engine = create_engine(
     max_overflow=30,
     pool_timeout=30,
     pool_recycle=3600,
+    connect_args={"sslmode": "require"},
 )
-async_engine = create_async_engine(settings.db_uri)
-
+async_engine = create_async_engine(
+    settings.db_uri,
+    connect_args={"ssl": True},
+)
 
 def _prepare_sessionmaker(engine: Engine) -> sessionmaker:
     return sessionmaker(autocommit=False, autoflush=False, bind=engine)

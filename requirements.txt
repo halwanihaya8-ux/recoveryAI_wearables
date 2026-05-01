@@ -1,4 +1,4 @@
-﻿# Core API
+# Core API
 fastapi>=0.120.4
 fastapi-cli>=0.0.8
 uvicorn[standard]

@@ -38,6 +38,18 @@ for _name in ("uvicorn", "uvicorn.error", "uvicorn.access"):
 
 @asynccontextmanager
 async def _lifespan(_: FastAPI) -> AsyncGenerator[None, None]:
+    from app.database import SessionLocal
+    from app.services import developer_service
+    from app.schemas.model_crud.user_management import DeveloperCreate
+    try:
+        with SessionLocal() as db:
+            if not developer_service.crud.exists_any(db):
+                developer_service.register(db, DeveloperCreate(
+                    email=settings.admin_email,
+                    password=settings.admin_password.get_secret_value()
+                ))
+    except Exception:
+        pass
     svix_service.register_event_types()
     yield
 
