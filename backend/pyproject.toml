@@ -5,9 +5,9 @@ description = ""
 requires-python = ">=3.13"
 dependencies = [
     "cryptography>=45.0.4",
-    "pydantic-settings>=2.10.1",
+    "pydantic-settings>=2.14.1",
     "email-validator>=2.2.0",
-    "psycopg>=3.2.9",
+    "psycopg>=3.3.4",
     "sqlalchemy>=2.0.43",
     "fastapi>=0.120.4",
     "fastapi-cli>=0.0.8",
@@ -15,11 +15,11 @@ dependencies = [
     "flower>=2.0.1",
     "redis>=7.0.1",
     "sentry-sdk[fastapi]>=2.57.0",
-    "python-multipart>=0.0.20",
+    "python-multipart>=0.0.28",
     "python-jose[cryptography]>=3.5.0",
     "httpx>=0.28.1",
     "alembic>=1.17.1",
-    "boto3>=1.40.67",
+    "boto3>=1.43.4",
     "xgboost",
     "scikit-learn",
     "joblib",
@@ -28,7 +28,7 @@ dependencies = [
     "requests>=2.32.5",
     "bcrypt>=5.0.0",
     "isodate>=0.7.2",
-    "resend>=2.0.0",
+    "resend>=2.30.0",
     "pyyaml>=6.0.3",
     "svix>=1.90.0",
     "numpy>=2.4.4",
@@ -42,7 +42,7 @@ dependencies = [
 code-quality = [
     "pre-commit>=4.5.1",
     "ruff>=0.14.14",
-    "ty>=0.0.14",
+    "ty>=0.0.34",
 ]
 dev = [
     "pytest>=8.4.1",
@@ -50,7 +50,7 @@ dev = [
     "pytest-cov>=6.2.1",
     "freezegun>=1.5.0",
     "factory-boy>=3.3.0",
-    "psycopg-binary>=3.3.2",
+    "psycopg-binary>=3.3.4",
     "ruff>=0.14.7",
     "testcontainers[postgres,redis]>=4.14.2",
 ]
